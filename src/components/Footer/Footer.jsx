@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/logo/logo.png';
 
+
 const Footer = () => {
     return (
-        <footer className="footer p-10 header bg-gradient-to-r from-slate-800 to-black/70 text-base-content">
+        <footer className="footer p-10 bg-gradient-to-l from-blue-900 via-cyan-900 to-slate-800  text-base-content">
         <Link to='/'>
           <div className="w-28 flex items-center">
            <img className="w-full" src={logo} alt="" />

@@ -11,6 +11,8 @@ import infoImage from '../../Assets/Images/info image.jpg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Package from '../Package/Package';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
     const [packages, setPackages] = useState([])
@@ -70,7 +72,7 @@ const Home = () => {
                    packages.map(pack => <Package key={pack._id} Pack={pack}/>)
                  }
                </div>
-               <div className='text-center'><button className="btn btn-success mt-10 px-28">See All Plans</button></div>
+               <div className='text-center'><Link to='/packages'><button className="btn btn-success mt-10 px-28">See All Plans</button></Link></div>
             </section>
             <section className='trust-section my-24'>
                 <h1 className='text-center text-7xl font-extrabold mb-10'>Trusted By</h1>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../Assets/logo/logo.png'
+import logo from '../../Assets/logo/logo.png';
 
 const Header = () => {
   return (
@@ -42,7 +42,7 @@ const Header = () => {
             id="navbar-cta">
             <ul class="flex flex-col p-4 mt-4 rounded-lg borde md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
               <li>
-                <Link class="block py-2 pr-4 pl-3 text-white text-lg font-bold bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">
+                <Link to='/' class="block py-2 pr-4 pl-3 text-white text-lg font-bold bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">
                   Home
                 </Link>
               </li>
@@ -52,7 +52,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link class="block py-2 pr-4 pl-3 text-white rounded text-lg font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <Link to='/packages' class="block py-2 pr-4 pl-3 text-white rounded text-lg font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                   Services
                 </Link>
               </li>

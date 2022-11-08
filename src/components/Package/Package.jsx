@@ -1,4 +1,6 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Package = ({Pack}) => {
     const {NetSpeed,image,context,price,name} = Pack 
@@ -6,7 +8,11 @@ const Package = ({Pack}) => {
     return (
         <div className="card w-96 bg-white shadow-xl">  
         <figure className="pt-6">
-          <img src={image} alt="" className="w-14"/>
+          <PhotoProvider>
+            <PhotoView src={image}>
+              <img src={image} alt="" className="w-14"/>
+            </PhotoView>
+          </PhotoProvider>
         </figure>
         <h1 className='text-center text-cyan-500 text-lg'>{name}</h1>
         <div className="card-body items-center text-center">
