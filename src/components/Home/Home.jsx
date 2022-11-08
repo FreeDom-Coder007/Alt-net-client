@@ -22,7 +22,6 @@ const Home = () => {
       .then(res => res.json())
       .then(data => setPackages(data))
     },[])
-    console.log(packages)
 
     return (
         <div className='banner w-10/12 mx-auto'>

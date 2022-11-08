@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Package from '../components/Package/Package';
@@ -23,7 +23,6 @@ const Packages = () => {
                 packages.map(pack => <Package key={pack._id} Pack={pack}/>)
                }
               </div>
-              <div className='text-center'><Link to='/packages'><button className="btn btn-success mt-10 px-28">See All Plans</button></Link></div>
             </section>
             <Footer></Footer>
          </div>
