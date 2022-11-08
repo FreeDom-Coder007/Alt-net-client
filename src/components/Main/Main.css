@@ -1,0 +1,7 @@
+.main{
+    background-image: linear-gradient(to right, rgb(0, 0, 0),rgba(0, 0, 0, 0.265)),url(../../Assets/Images/Bannaer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+/* linear-gradient(to right, rgb(0, 0, 0),rgba(0, 0, 0, 0.265)), */
