@@ -9,12 +9,11 @@ const Header = () => {
         <div class="container flex flex-wrap justify-between items-center mx-auto">
           <Link to='/'><div className="w-28 flex items-center"><img className="w-full" src={logo} alt="" /><span className="text-white text-2xl font-semibold">AltNet</span></div></Link>
           <div class="flex md:order-2">
-            <button
-              type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Get started
+            <Link to="/login">
+            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              LogIn
             </button>
+            </Link>
             <button
               data-collapse-toggle="navbar-cta"
               type="button"

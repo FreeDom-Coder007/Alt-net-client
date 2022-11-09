@@ -6,11 +6,12 @@ const ReviewPage = () => {
         event.preventDefault()
 
         const name = event.target.name.value
+        const email = event.target.email.value
         const photoURL = event.target.photoURL.value
         const date = event.target.date.value
         const comment = event.target.textarea.value
-        const review = {name, photoURL, date, comment,}
-        console.log(review) 
+
+        const review = {name, email, photoURL, date, comment,}
         
         fetch('http://localhost:5000/reviews',{
             method: 'POST',
@@ -32,13 +33,16 @@ const ReviewPage = () => {
               <input name='name' type="text" placeholder="Enter Name" className="input input-bordered w-full max-w-sm" />
             </div>
             <div className="form-control my-4">
+              <input name='email' type="email" placeholder="Enter Email" className="input input-bordered w-full max-w-sm" />
+            </div>
+            <div className="form-control my-4">
               <input name='photoURL' type="text" placeholder="Enter photoURL" className="input input-bordered w-full max-w-sm" />
             </div>
             <div className="form-control my-4">
               <input name='date' type="date" placeholder="Enter Date" className="input input-bordered w-full max-w-sm" />
             </div>
             <div className="form-control">
-              <textarea name='textarea' rows="10" placeholder="Enter Your Review here" className="textarea textarea-bordered w-2/5"></textarea>
+              <textarea name='textarea' rows="7" placeholder="Enter Your Review here" className="textarea textarea-bordered lg:w-4/12 md:w-3/6"></textarea>
             </div>
             <button type="submit" className='btn my-4'>Post Review</button>
           </form>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Main from "../components/Main/Main";
 import DetailsPage from "../pages/DetailsPage";
+import Login from "../pages/Login";
 import Packages from "../pages/Packages";
 import ReviewPage from "../pages/ReviewPage";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
          {
            path: '/',
            element: <Home/> 
+         },
+         {
+          path: '/login',
+          element: <Login/>
          }
        ] 
     },
@@ -28,7 +33,7 @@ const router = createBrowserRouter([
     {
       path: '/reviw-page',
       element: <ReviewPage/>
-    }
+    },
     
 ])
 
