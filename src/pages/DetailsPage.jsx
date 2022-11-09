@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Review from './Review';
@@ -10,15 +10,15 @@ import Review from './Review';
 
 const DetailsPage = () => {
     const PakageDetails = useLoaderData()
-    console.log(PakageDetails)
 
     const [reviews, setReviews] = useState([])
+
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
-    console.log(reviews)
+
 
     return (
         <section>
@@ -41,9 +41,10 @@ const DetailsPage = () => {
             <h1 className='text-2xl font-bold border-b-2'>Customer's Feedback About our services</h1>
             <div className='review-container'>
                 {
-                  reviews.map(review => <Review Reviewer={review}/>)  
+                  reviews.map(review => <Review key={review._id} Reviewer={review}/>)  
                 }
-            </div>    
+            </div>
+            <Link to="/reviw-page"><button className='btn btn-warning text-white'>Add Your Reviews</button></Link>    
         </div>
         <Footer></Footer>    
         </section>

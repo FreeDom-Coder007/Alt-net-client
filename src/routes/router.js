@@ -3,6 +3,7 @@ import Home from "../components/Home/Home";
 import Main from "../components/Main/Main";
 import DetailsPage from "../pages/DetailsPage";
 import Packages from "../pages/Packages";
+import ReviewPage from "../pages/ReviewPage";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       path: '/detailspage/:id',
       loader: ({params}) => fetch(`http://localhost:5000/package/${params.id}`),
       element: <DetailsPage/>
+    },
+    {
+      path: '/reviw-page',
+      element: <ReviewPage/>
     }
     
 ])
