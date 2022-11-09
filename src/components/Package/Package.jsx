@@ -11,7 +11,7 @@ const Package = ({Pack}) => {
         <figure className="pt-6">
           <PhotoProvider>
             <PhotoView src={image}>
-              <img src={image} alt="" className="w-14"/>
+            <img src={image} alt="" className="w-14"/>
             </PhotoView>
           </PhotoProvider>
         </figure>
