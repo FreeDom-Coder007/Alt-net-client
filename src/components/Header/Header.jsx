@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/AuthContextProvider";
 const Header = () => {
   const {logOut, user} = useContext(AuthContext)
   console.log(user)
+
   const handleLogOut = () => {
     logOut()
     .then(result => {
@@ -23,11 +24,12 @@ const Header = () => {
           <div className="flex md:order-2">
             { user?.uid ? 
               <>
+              <Link to={`/my_reviews/${user.uid}`}><button className="btn bg-blue-700 mr-2">My reviews</button></Link>
               <button onClick={handleLogOut} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LogOut</button>
               </>
               :
               <>
-              <Link to="/signup" className=" mr-4"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign Up</button></Link>
+              <Link to="/signup" className=" mr-4"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button></Link>
               <Link to="/login"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LogIn</button></Link>
               </>
             }
@@ -78,7 +80,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link className="block py-2 pr-4 pl-3 text-white rounded text-lg font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <Link to="/blog" className="block py-2 pr-4 pl-3 text-white rounded text-lg font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                   Blog
                 </Link>
               </li>

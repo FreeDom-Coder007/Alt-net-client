@@ -1,18 +1,22 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContextProvider';
 
 const ReviewPage = () => {
+    const {user} = useContext(AuthContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
         const name = event.target.name.value
         const email = event.target.email.value
         const photoURL = event.target.photoURL.value
         const date = event.target.date.value
         const comment = event.target.textarea.value
+        const userId = user.uid
 
-        const review = {name, email, photoURL, date, comment,}
-        
+        const review = {name, email, photoURL, date, comment, userId}
+        event.target.reset()
+
         fetch('http://localhost:5000/reviews',{
             method: 'POST',
             headers: {

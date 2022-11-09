@@ -15,14 +15,17 @@ const SignUp = () => {
         const photoURL = form.photoURL.value
         const email = form.email.value
         const password = form.password.value
-        
+        form.reset()
+
         signUp(email,password)
         .then(result => {
            const user = result.user
            user.displayName = fullName
            user.photoURL = photoURL
+           const userID = user.uid
            setUser(user)
-           console.log(user)
+           console.log(userID)
+
         })
         .catch(error => console.log(error.message))
     }
