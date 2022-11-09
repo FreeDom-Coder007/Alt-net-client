@@ -5,6 +5,8 @@ import DetailsPage from "../pages/DetailsPage";
 import Login from "../pages/Login";
 import Packages from "../pages/Packages";
 import ReviewPage from "../pages/ReviewPage";
+import SignUp from "../pages/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
          {
           path: '/login',
           element: <Login/>
+         },
+         {
+           path: '/signup',
+           element: <SignUp/>
          }
        ] 
     },
@@ -32,7 +38,7 @@ const router = createBrowserRouter([
     },
     {
       path: '/reviw-page',
-      element: <ReviewPage/>
+      element: <PrivateRoute><ReviewPage/></PrivateRoute> 
     },
     
 ])

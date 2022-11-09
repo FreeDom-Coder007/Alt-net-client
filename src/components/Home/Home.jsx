@@ -28,7 +28,7 @@ const Home = () => {
             <section className='flex justify-between mb-8'>
               <div className="banner-info">
                <h1 className='text-6xl text-zinc-300 font-extrabold mt-28 mb-8'>Number 1 <br/> High Speed <br/> BroadBrand Provider</h1>
-               <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-full px-24 py-3 text-center mr-2 mb-2">Subscribe</button> 
+               <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-full px-24 py-3 text-center mr-2 mb-2">Subscribe</button> 
               </div>
               <div className="banner-image">
                 <img src={bannerImage} alt=""/>
