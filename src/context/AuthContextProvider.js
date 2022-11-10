@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContext } from 'react';
 import app from '../FireBase/FireBase.config';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile} from 'firebase/auth'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -21,6 +21,10 @@ const AuthContextProvider = ({children}) => {
       return signInWithEmailAndPassword(auth,email,password)
     }
 
+    const updateUserProfile = (profile) => {
+        return updateProfile(profile)
+    }
+
     const logOut = () => {
         return signOut(auth)
     }
@@ -31,7 +35,7 @@ const AuthContextProvider = ({children}) => {
         })
     },[])
 
-    const authValues = {user, setUser, signUp, signIn, GoogleProvider, logOut}
+    const authValues = {user, setUser, signUp, signIn, updateUserProfile, GoogleProvider, logOut}
 
     return (
         <AuthContext.Provider value={authValues}>

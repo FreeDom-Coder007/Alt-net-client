@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { auth, AuthContext } from '../context/AuthContextProvider';
 
 const SignUp = () => {
-    const {setUser, signUp, GoogleProvider} = useContext(AuthContext)
+    const {setUser, signUp, updateUserProfile, GoogleProvider} = useContext(AuthContext)
     
+    //----------- SignIn with email, Password ----------//
     const handleSignUp = (event) => {
         event.preventDefault()
         const form = event.target
@@ -20,16 +21,26 @@ const SignUp = () => {
         signUp(email,password)
         .then(result => {
            const user = result.user
-           user.displayName = fullName
-           user.photoURL = photoURL
            const userID = user.uid
            setUser(user)
-           console.log(userID)
-
+           handleUpdateUserProfile(fullName,photoURL)           
         })
         .catch(error => console.log(error.message))
     }
 
+    //----------- User Profile Update ----------//
+    const handleUpdateUserProfile = (fullName,photoURL) => {
+      const profile = {
+        displayName: fullName,
+        photoURL: photoURL 
+      }
+
+      updateUserProfile(profile)
+      .then(() => {})
+      .catch(err => console.error(err.message))
+    }
+
+    //-------- Google SignIn --------//
     const handleGoogleSignIn = () => {
        signInWithPopup(auth,GoogleProvider)
        .then(result => {

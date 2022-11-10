@@ -34,7 +34,7 @@ const DetailsPage = () => {
                <h1 className='font-bold'>{PakageDetails.NetSpeed}</h1>
                <h1 className='font-semibold mt-3'>USD: ${PakageDetails.price}</h1>
                <p className="py-6 font-semibold text-2xl">{PakageDetails.Description}</p>
-               <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-full px-10 py-3 text-center">Subscribe</button>
+               <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-full px-10 py-3 text-center">Add Package</button>
              </div>
          </div>
         </div>
