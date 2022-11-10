@@ -10,7 +10,7 @@ const Packages = () => {
     useTitle('All Packages')
 
     useEffect(() => {
-      fetch('http://localhost:5000/all-packages')
+      fetch('https://alt-net-provider-server.vercel.app/all-packages')
       .then(res => res.json())
       .then(data => setPackages(data))
     },[])

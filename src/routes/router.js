@@ -4,7 +4,6 @@ import Main from "../components/Main/Main";
 import AddPackage from "../pages/AddPackage";
 import Blog from "../pages/Blog";
 import DetailsPage from "../pages/DetailsPage";
-import EditReview from "../pages/EditeReviewPage";
 import Login from "../pages/Login";
 import MyReviews from "../pages/MyReviews";
 import Packages from "../pages/Packages";
@@ -37,7 +36,7 @@ const router = createBrowserRouter([
     },
     {
       path: '/detailspage/:id',
-      loader: ({params}) => fetch(`http://localhost:5000/package/${params.id}`),
+      loader: ({params}) => fetch(`https://alt-net-provider-server.vercel.app/${params.id}`),
       element: <DetailsPage/>
     },
     {
@@ -46,7 +45,7 @@ const router = createBrowserRouter([
     },
     {
       path: '/my_reviews/:id',
-      loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`),
+      loader: ({params}) => fetch(`https://alt-net-provider-server.vercel.app/reviews/${params.id}`),
       element: <MyReviews/>
     },
     {

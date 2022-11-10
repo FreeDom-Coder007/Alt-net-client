@@ -28,7 +28,7 @@ const Login = () => {
            }
 
            setUser(user)
-           fetch('http://localhost:5000/jwt',{
+           fetch('https://alt-net-provider-server.vercel.app/jwt',{
              method: 'POST',
              headers: {
                 'content-type': 'application/json'

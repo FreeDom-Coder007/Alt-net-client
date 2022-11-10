@@ -13,7 +13,7 @@ const MyReviews = () => {
     useTitle('My Reviews')
     
     const handleDeleteReview = () => {
-       fetch(`http://localhost:5000/reviews/${myReviews._id}`,{
+       fetch(`https://alt-net-provider-server.vercel.app/reviews/${myReviews._id}`,{
          method: 'DELETE'
        })
        .then((res) => res.json())

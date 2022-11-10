@@ -19,7 +19,7 @@ const ReviewPage = () => {
         const review = {name, email, photoURL, date, comment, userId}
         event.target.reset()
 
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://alt-net-provider-server.vercel.app/reviews',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

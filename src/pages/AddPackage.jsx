@@ -19,7 +19,7 @@ const AddPackage = () => {
         const Package = {price, name, NetSpeed, image, DetailsImage, Description}
         form.reset()
 
-        fetch('http://localhost:5000/packages',{
+        fetch('https://alt-net-provider-server.vercel.app/packages',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
