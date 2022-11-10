@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-// import ReactDOM from 'react-dom';
-// import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../components/Footer/Footer';
@@ -44,9 +42,10 @@ const MyReviews = () => {
         <section>
           <Header></Header>
            <div className='reviews-section lg:w-8/12 mx-auto my-32'>
-            <h1 className='text-2xl font-bold border-b-2'>Your Reviews</h1>
+            <h1 className='text-2xl font-bold border-b-2'>Your Reviews {myReviews.length}</h1>
             <div className='review-container'>
             { myReviews ?
+            <>
              <article className='my-10 border px-2 py-2 shadow-sm'>
              <div className="flex items-center mb-4 space-x-4">
               <img className="w-10 h-10 rounded-full" src={myReviews.photoURL} alt=""/>
@@ -64,6 +63,8 @@ const MyReviews = () => {
                 <ToastContainer/>
                </div>
              </article>
+             <EditReview key={myReviews._id} storedReview={myReviews}/>
+             </>
             :
              <article className='my-10 border  text-center px-2 py-2'>
                <h1 className='text-5xl font-semibold'>No reviews were added</h1>
@@ -71,7 +72,6 @@ const MyReviews = () => {
             }
             </div>    
            </div>
-           <EditReview key={myReviews._id} storedReview={myReviews}/>
           <Footer></Footer>
         </section> 
     )

@@ -1,14 +1,14 @@
 import { signInWithPopup } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth, AuthContext } from '../context/AuthContextProvider';
 import useTitle from '../hooks/useTitle';
 
 const SignUp = () => {
-    const {setUser, signUp, updateUserProfile, GoogleProvider} = useContext(AuthContext)
+    const {setUser, setLoading, signUp, updateUserProfile, GoogleProvider} = useContext(AuthContext)
     useTitle('Register')
-
+    const navigate = useNavigate()
     //----------- SignIn with email, Password ----------//
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -25,7 +25,9 @@ const SignUp = () => {
            const user = result.user
            const userID = user.uid
            setUser(user)
-           handleUpdateUserProfile(fullName,photoURL)           
+           setLoading(false)
+           handleUpdateUserProfile(fullName,photoURL)
+           navigate('/')           
         })
         .catch(error => console.log(error.message))
     }
@@ -49,6 +51,7 @@ const SignUp = () => {
         const user = result.user
         setUser(user)
         console.log(user)
+        navigate('/')
      })
      .catch(error => console.log(error.message)) 
     }

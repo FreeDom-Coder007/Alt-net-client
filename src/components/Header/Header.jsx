@@ -56,8 +56,7 @@ const Header = () => {
             </button>
             <div className="avatar ml-4">
              <div className="w-12 rounded-full">
-              <img title={user?.displayName} src={user?.photoURL ? user.photoURL : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2fQ4vDOJu1OTLr-lmPtQJw60FwODB-mMUrpSCMZxXnM73d9e5YDClVHZCRuFzK7Md_DI&usqp=CAU"} alt=""/>
-              {/* <img title={user?.displayName} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2fQ4vDOJu1OTLr-lmPtQJw60FwODB-mMUrpSCMZxXnM73d9e5YDClVHZCRuFzK7Md_DI&usqp=CAU" alt=""/> */}
+              <img title={user?.displayName} src={user ? user.photoURL : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2fQ4vDOJu1OTLr-lmPtQJw60FwODB-mMUrpSCMZxXnM73d9e5YDClVHZCRuFzK7Md_DI&usqp=CAU"} alt=""/>
              </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import useTitle from '../hooks/useTitle';
 
 
 const Login = () => {
-    const {setUser,signIn,GoogleProvider} = useContext(AuthContext)
+    const {setUser,signIn,GoogleProvider, setLoading} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
@@ -22,9 +22,26 @@ const Login = () => {
         signIn(email,password)
         .then(result => {
            const user = result.user
-           console.log(user)
+           
+           const currentUser = {
+              email: user.email
+           }
+
            setUser(user)
-           navigate(from, {replace: true})
+           fetch('http://localhost:5000/jwt',{
+             method: 'POST',
+             headers: {
+                'content-type': 'application/json'
+             },
+             body: JSON.stringify(currentUser)
+           })
+           .then(res => res.json())
+           .then(data => {
+            localStorage.setItem('token', data.token)
+            console.log(data)
+           })
+           // navigate(from, {replace: true})
+           setLoading(false)
         })
         .catch(error => console.log(error.message))
     }
