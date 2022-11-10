@@ -3,10 +3,12 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { auth, AuthContext } from '../context/AuthContextProvider';
+import useTitle from '../hooks/useTitle';
 
 const SignUp = () => {
     const {setUser, signUp, updateUserProfile, GoogleProvider} = useContext(AuthContext)
-    
+    useTitle('Register')
+
     //----------- SignIn with email, Password ----------//
     const handleSignUp = (event) => {
         event.preventDefault()

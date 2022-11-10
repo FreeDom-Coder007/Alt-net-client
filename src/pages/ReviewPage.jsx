@@ -1,9 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContextProvider';
+import useTitle from '../hooks/useTitle';
 
 const ReviewPage = () => {
     const {user} = useContext(AuthContext)
+    useTitle('Review Page')
 
     const handleSubmit = (event) => {
         event.preventDefault()

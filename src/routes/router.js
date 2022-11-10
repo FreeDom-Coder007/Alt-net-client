@@ -4,6 +4,7 @@ import Main from "../components/Main/Main";
 import AddPackage from "../pages/AddPackage";
 import Blog from "../pages/Blog";
 import DetailsPage from "../pages/DetailsPage";
+import EditReview from "../pages/EditeReviewPage";
 import Login from "../pages/Login";
 import MyReviews from "../pages/MyReviews";
 import Packages from "../pages/Packages";
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
          {
            path: '/blog',
            element: <Blog/>
-         }
+         },
        ] 
     },
     {
@@ -55,8 +56,7 @@ const router = createBrowserRouter([
     {
       path: '/add-packages',
       element: <AddPackage/>
-    }
-    
+    }  
 ])
 
 export default router;

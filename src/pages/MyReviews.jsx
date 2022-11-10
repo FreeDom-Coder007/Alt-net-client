@@ -4,12 +4,16 @@ import { Link, useLoaderData } from 'react-router-dom';
 // import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
+import useTitle from '../hooks/useTitle';
+import EditReview from './EditeReviewPage';
 
 
 const MyReviews = () => {
     const myReviews = useLoaderData()
-    console.log(myReviews)
-
+    useTitle('My Reviews')
+    
     const handleDeleteReview = () => {
        fetch(`http://localhost:5000/reviews/${myReviews._id}`,{
          method: 'DELETE'
@@ -37,7 +41,9 @@ const MyReviews = () => {
     }
     
     return (
-        <div className='reviews-section lg:w-8/12 mx-auto my-10'>
+        <section>
+          <Header></Header>
+           <div className='reviews-section lg:w-8/12 mx-auto my-32'>
             <h1 className='text-2xl font-bold border-b-2'>Your Reviews</h1>
             <div className='review-container'>
             { myReviews ?
@@ -53,7 +59,7 @@ const MyReviews = () => {
              </div>
                <p className="mb-2">{myReviews.comment}</p>
                <div className='mt-8 mb-2'>
-                <Link className='btn'>Edit Review</Link>
+                <Link className='btn' to={`/edit-review/${myReviews._id}`}>Edit Review</Link>
                 <button onClick={handleDeleteReview} className='btn ml-5'>Delete Review</button>
                 <ToastContainer/>
                </div>
@@ -64,7 +70,10 @@ const MyReviews = () => {
              </article>
             }
             </div>    
-        </div> 
+           </div>
+           <EditReview key={myReviews._id} storedReview={myReviews}/>
+          <Footer></Footer>
+        </section> 
     )
 }
 

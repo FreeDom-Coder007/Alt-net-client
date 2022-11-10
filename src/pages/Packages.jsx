@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Package from '../components/Package/Package';
+import useTitle from '../hooks/useTitle';
 
 const Packages = () => {
     const [packages, setPackages] = useState([])
-    
+    useTitle('All Packages')
+
     useEffect(() => {
       fetch('http://localhost:5000/all-packages')
       .then(res => res.json())

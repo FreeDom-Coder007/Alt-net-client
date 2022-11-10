@@ -1,18 +1,20 @@
 import React from 'react';
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import { AuthContext } from '../context/AuthContextProvider';
+// import { AuthContext } from '../context/AuthContextProvider';
 import Review from './Review';
-// import { PhotoProvider, PhotoView } from 'react-photo-view';
-// import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../hooks/useTitle';
 
 const DetailsPage = () => {
     const PakageDetails = useLoaderData()
-    const {user} = useContext(AuthContext)
+    // const {user} = useContext(AuthContext)
+    useTitle('Package Details')
 
     const [reviews, setReviews] = useState([])
     useEffect(() => {
@@ -27,14 +29,19 @@ const DetailsPage = () => {
         <Header></Header>
         <div className="hero min-h-screen my-10">
          <div className="hero-content text-center flex flex-col border">
-             <div><img src={PakageDetails.DetailsImage} alt=""/></div>    
+             <div>
+             <PhotoProvider>
+               <PhotoView src={PakageDetails.DetailsImage}>
+               <img src={PakageDetails.DetailsImage} alt=""/>
+               </PhotoView>
+              </PhotoProvider>
+             </div>    
              <div className="max-w-md mb-8">
                <h1 className="text-5xl font-bold">{PakageDetails.name}</h1>
                <h1 className='mt-10'>Up to</h1>
                <h1 className='font-bold'>{PakageDetails.NetSpeed}</h1>
                <h1 className='font-semibold mt-3'>USD: ${PakageDetails.price}</h1>
                <p className="py-6 font-semibold text-2xl">{PakageDetails.Description}</p>
-               <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-full px-10 py-3 text-center">Add Package</button>
              </div>
          </div>
         </div>
