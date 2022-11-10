@@ -24,7 +24,7 @@ const Home = () => {
     },[])
 
     return (
-        <div className='banner w-10/12 mx-auto'>
+        <div className='home w-10/12 mx-auto mb-20'>
             <section className='flex justify-between mb-8'>
               <div className="banner-info">
                <h1 className='text-6xl text-zinc-300 font-extrabold mt-28 mb-8'>Number 1 <br/> High Speed <br/> BroadBrand Provider</h1>

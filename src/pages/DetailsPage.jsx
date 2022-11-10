@@ -30,7 +30,7 @@ const DetailsPage = () => {
              <div><img src={PakageDetails.DetailsImage} alt=""/></div>    
              <div className="max-w-md mb-8">
                <h1 className="text-5xl font-bold">{PakageDetails.name}</h1>
-               <h1 className='mt-10'>{PakageDetails.context}</h1>
+               <h1 className='mt-10'>Up to</h1>
                <h1 className='font-bold'>{PakageDetails.NetSpeed}</h1>
                <h1 className='font-semibold mt-3'>USD: ${PakageDetails.price}</h1>
                <p className="py-6 font-semibold text-2xl">{PakageDetails.Description}</p>
@@ -46,7 +46,7 @@ const DetailsPage = () => {
                   reviews.map(review => <Review key={review._id} Reviewer={review}/>)  
                 }
             </div>
-            <Link to="/reviw-page"><button className='btn btn-warning text-white'>Add Your Reviews</button></Link>    
+            <Link to="/reviw-page"><button className='btn btn-warning text-white mt-5'>Add Your Reviews</button></Link>    
         </div>
         <Footer></Footer>    
         </section>

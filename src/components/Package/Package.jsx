@@ -4,7 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const Package = ({Pack}) => {
-    const {NetSpeed,image,context,price,name,_id} = Pack 
+    const {NetSpeed,image,price,name,_id} = Pack 
 
     return (
         <div className="card w-96 bg-white shadow-xl">  
@@ -17,7 +17,7 @@ const Package = ({Pack}) => {
         </figure>
         <h1 className='text-center text-cyan-500 text-lg'>{name}</h1>
         <div className="card-body items-center text-center">
-          <p className='text-center text-lg font-semibold'>{context}</p>
+          <p className='text-center text-lg font-semibold'>Up to</p>
           <h2 className="card-title font-bold text-3xl">{NetSpeed}</h2>
           <p className='font-semibold my-5'>USD ${price}..<small>/Month</small> </p>
           <div className="card-actions">

@@ -22,6 +22,7 @@ const AuthContextProvider = ({children}) => {
     }
 
     const updateUserProfile = (profile) => {
+        console.log(profile)
         return updateProfile(profile)
     }
 
